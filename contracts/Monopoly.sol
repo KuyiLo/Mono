@@ -91,42 +91,42 @@ contract Monopoly is Ownable {
         function initializeBoard() internal {
         // ===== 初始化 22 块住宅地产 =====
         // Brown (Group 0) - Build cost: 50
-        properties.push(Property("Mediterranean Avenue", 60, 2, [10, 30, 90, 160, 250], 30, address(0), false, 0));
-        properties.push(Property("Baltic Avenue", 60, 4, [20, 60, 180, 320, 450], 30, address(0), false, 0));
+        properties.push(Property("Mediterranean Avenue", 60, 2,  [uint256(10), uint256(30), uint256(90), uint256(160), uint256(250)], 30, address(0), false, 0,50));
+        properties.push(Property("Baltic Avenue", 60, 4, [uint256(20), uint256(60), uint256(180), uint256(320), uint256(450)], 30, address(0), false, 0,50));
 
         // Light Blue (Group 1) - Build cost: 50
-        properties.push(Property("Oriental Avenue", 100, 6, [30, 90, 270, 400, 550], 50, address(0), false, 1));
-        properties.push(Property("Vermont Avenue", 100, 6, [30, 90, 270, 400, 550], 50, address(0), false, 1));
-        properties.push(Property("Connecticut Avenue", 120, 8, [40, 100, 300, 450, 600], 60, address(0), false, 1));
+        properties.push(Property("Oriental Avenue", 100, 6, [uint256(30), uint(90), uint256(270),uint256(400), uint256(550)], 50, address(0), false, 1,50));
+        properties.push(Property("Vermont Avenue", 100, 6, [uint256(30), uint256(90), uint256(270), uint256(400), uint256(550)], 50, address(0), false, 1,50));
+        properties.push(Property("Connecticut Avenue", 120, 8, [uint256(40), uint256(100), uint256(300), uint256(450), uint256(600)], 60, address(0), false, 1,50));
 
         // Pink (Group 2) - Build cost: 100
-        properties.push(Property("St. Charles Place", 140, 10, [50, 150, 450, 625, 750], 70, address(0), false, 2));
-        properties.push(Property("States Avenue", 140, 10, [50, 150, 450, 625, 750], 70, address(0), false, 2));
-        properties.push(Property("Virginia Avenue", 160, 12, [60, 180, 500, 700, 900], 80, address(0), false, 2));
+        properties.push(Property("St. Charles Place", 140, 10, [uint256(50), uint256(150), uint256(450), uint256(625), uint256(750)], 70, address(0), false, 2,100));
+        properties.push(Property("States Avenue", 140, 10, [uint256(50), uint256(150), uint256(450), uint256(625), uint256(750)], 70, address(0), false, 2,100));
+        properties.push(Property("Virginia Avenue", 160, 12, [uint256(60), uint256(180), uint256(500), uint256(700), uint256(900)], 80, address(0), false, 2,100));
 
         // Orange (Group 3) - Build cost: 100
-        properties.push(Property("St. James Place", 180, 14, [70, 200, 550, 750, 950], 90, address(0), false, 3));
-        properties.push(Property("Tennessee Avenue", 180, 14, [70, 200, 550, 750, 950], 90, address(0), false, 3));
-        properties.push(Property("New York Avenue", 200, 16, [80, 220, 600, 800, 1000], 100, address(0), false, 3));
+        properties.push(Property("St. James Place", 180, 14, [uint256(70), uint256(200), uint256(550), uint256(750), uint256(950)], 90, address(0), false, 3,100));
+        properties.push(Property("Tennessee Avenue", 180, 14, [uint256(70), uint256(200), uint256(550), uint256(750), uint256(950)], 90, address(0), false, 3,100));
+        properties.push(Property("New York Avenue", 200, 16, [uint256(80), uint256(220), uint256(600), uint256(800), uint256(1000)], 100, address(0), false, 3,100));
 
         // Red (Group 4) - Build cost: 150
-        properties.push(Property("Kentucky Avenue", 220, 18, [90, 250, 700, 875, 1050], 110, address(0), false, 4));
-        properties.push(Property("Indiana Avenue", 220, 18, [90, 250, 700, 875, 1050], 110, address(0), false, 4));
-        properties.push(Property("Illinois Avenue", 240, 20, [100, 300, 750, 925, 1100], 120, address(0), false, 4));
+        properties.push(Property("Kentucky Avenue", 220, 18, [uint256(90), uint256(250), uint256(700), uint256(875), uint256(1050)], 110, address(0), false, 4,150));
+        properties.push(Property("Indiana Avenue", 220, 18, [uint256(90), uint256(250), uint256(700), uint256(875), uint256(1050)], 110, address(0), false, 4,150));
+        properties.push(Property("Illinois Avenue", 240, 20, [uint256(100), uint256(300), uint256(750), uint256(925), uint256(1100)], 120, address(0), false, 4,150));
 
         // Yellow (Group 5) - Build cost: 150
-        properties.push(Property("Atlantic Avenue", 260, 22, [110, 330, 800, 975, 1150], 130, address(0), false, 5));
-        properties.push(Property("Ventnor Avenue", 260, 22, [110, 330, 800, 975, 1150], 130, address(0), false, 5));
-        properties.push(Property("Marvin Gardens", 280, 24, [120, 360, 850, 1025, 1200], 140, address(0), false, 5));
+        properties.push(Property("Atlantic Avenue", 260, 22, [uint256(110), uint256(330), uint256(800), uint256(975), uint256(1150)], 130, address(0), false, 5,150));
+        properties.push(Property("Ventnor Avenue", 260, 22, [uint256(110), uint256(330), uint256(800), uint256(975), uint256(1150)], 130, address(0), false, 5,150));
+        properties.push(Property("Marvin Gardens", 280, 24, [uint256(120), uint256(360), uint256(850), uint256(1025), uint256(1200)], 140, address(0), false, 5,150));
 
         // Green (Group 6) - Build cost: 200
-        properties.push(Property("Pacific Avenue", 300, 26, [130, 390, 900, 1100, 1275], 150, address(0), false, 6));
-        properties.push(Property("North Carolina Avenue", 300, 26, [130, 390, 900, 1100, 1275], 150, address(0), false, 6));
-        properties.push(Property("Pennsylvania Avenue", 320, 28, [150, 450, 1000, 1200, 1400], 160, address(0), false, 6));
+        properties.push(Property("Pacific Avenue", 300, 26, [uint256(130), uint256(390), uint256(900), uint256(1100), uint256(1275)], 150, address(0), false, 6,200));
+        properties.push(Property("North Carolina Avenue", 300, 26, [uint256(130), uint256(390), uint256(900), uint256(1100), uint(1275)], 150, address(0), false, 6,200));
+        properties.push(Property("Pennsylvania Avenue", 320, 28, [uint256(150), uint256(450), uint256(1000), uint256(1200), uint256(1400)], 160, address(0), false, 6,200));
 
         // Dark Blue (Group 7) - Build cost: 200
-        properties.push(Property("Park Place", 350, 35, [175, 500, 1100, 1300, 1500], 175, address(0), false, 7));
-        properties.push(Property("Boardwalk", 400, 50, [200, 600, 1400, 1700, 2000], 200, address(0), false, 7));
+        properties.push(Property("Park Place", 350, 35, [uint256(175), uint256(500), uint256(1100), uint256(1300), uint256(1500)], 175, address(0), false, 7,200));
+        properties.push(Property("Boardwalk", 400, 50, [uint256(200), uint256(600), uint256(1400), uint256(1700), uint256(2000)], 200, address(0), false, 7,200));
 
         propertyCount = properties.length; // = 22
 
@@ -413,7 +413,7 @@ contract Monopoly is Ownable {
             }
         } while (currentPlayerIndex != startIndex);
         // 所有玩家破产？结束游戏
-        endGame();
+        this.endGame();
     }
 
     // ===== 查询函数 =====
@@ -430,15 +430,4 @@ contract Monopoly is Ownable {
     function getCurrentPlayer() external view returns (address) {
         return playerAddresses[currentPlayerIndex];
     }
-<<<<<<< Updated upstream
 }
-
-//测试注释
-=======
-
-    function getTile(uint256 index) external view returns (Tile memory) {
-        require(index < 40, "Invalid tile");
-        return board[index];
-    }
-}
->>>>>>> Stashed changes
