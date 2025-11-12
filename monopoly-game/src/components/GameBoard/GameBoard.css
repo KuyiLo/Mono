@@ -1,0 +1,189 @@
+.connect-wallet-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 20px;
+}
+
+.wallet-card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.wallet-card h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.wallet-card p {
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+.connect-button {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.connect-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+}
+
+.wallet-tips {
+  margin-top: 30px;
+  text-align: left;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.wallet-tips h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.wallet-tips ul {
+  color: #7f8c8d;
+  padding-left: 20px;
+}
+
+.wallet-tips li {
+  margin-bottom: 5px;
+}
+
+/* 游戏主界面样式 */
+.game-board {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  background: #2c3e50;
+}
+
+.player-info-bar {
+  background: #34495e;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 10px;
+  background: #27ae60;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.tile {
+  width: 150px;
+  height: 100px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.start-tile {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+}
+
+.property-tile {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+}
+
+.tile-content {
+  text-align: center;
+}
+
+.tile-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.tile-effect, .tile-price {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.control-panel {
+  background: #ecf0f1;
+  padding: 20px;
+  border-top: 3px solid #bdc3c7;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.control-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.control-btn.primary {
+  background: #3498db;
+  color: white;
+}
+
+.control-btn.secondary {
+  background: #e74c3c;
+  color: white;
+}
+
+.control-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.game-info {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.game-info h4 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.game-info ul {
+  color: #7f8c8d;
+  padding-left: 20px;
+}
+
+.game-info li {
+  margin-bottom: 5px;
+}
