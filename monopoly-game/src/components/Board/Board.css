@@ -1,0 +1,194 @@
+.board-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  width: 800px;
+  height: 800px;
+  background: #27ae60;
+  border: 4px solid #2c3e50;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.board-row {
+  display: flex;
+  height: 100px;
+}
+
+.board-middle {
+  display: flex;
+  flex: 1;
+}
+
+.board-column {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+
+.board-center {
+  flex: 1;
+  background: #2ecc71;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #27ae60;
+}
+
+.center-content {
+  text-align: center;
+  color: white;
+}
+
+.center-content h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.tile {
+  flex: 1;
+  background: white;
+  border: 1px solid #ddd;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.tile-content {
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tile-name {
+  font-weight: bold;
+  font-size: 9px;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.tile-price, .tile-effect {
+  font-size: 8px;
+  color: #666;
+}
+
+.tile-owner {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 8px;
+  background: gold;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile-houses {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  display: flex;
+  gap: 1px;
+}
+
+.house {
+  font-size: 8px;
+}
+
+.tile-players {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  display: flex;
+  gap: 2px;
+}
+
+.player-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: bold;
+  color: white;
+  border: 1px solid white;
+}
+
+.player-marker.current {
+  border: 2px solid #e74c3c;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* 格子类型样式 */
+.start-tile { background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; }
+.property-tile { background: #f8f9fa; }
+.railroad-tile { background: linear-gradient(135deg, #95a5a6, #7f8c8d); color: white; }
+.utility-tile { background: linear-gradient(135deg, #3498db, #2980b9); color: white; }
+.tax-tile { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
+.jail-tile { background: linear-gradient(135deg, #34495e, #2c3e50); color: white; }
+.free-parking-tile { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; }
+.go-to-jail-tile { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
+.chance-tile { background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; }
+.community-chest-tile { background: linear-gradient(135deg, #3498db, #2980b9); color: white; }
+
+/* 颜色组样式 */
+.color-brown { border-left: 4px solid #8B4513; }
+.color-light-blue { border-left: 4px solid #87CEEB; }
+.color-pink { border-left: 4px solid #FF69B4; }
+.color-orange { border-left: 4px solid #FFA500; }
+.color-red { border-left: 4px solid #FF0000; }
+.color-yellow { border-left: 4px solid #FFD700; }
+.color-green { border-left: 4px solid #008000; }
+.color-dark-blue { border-left: 4px solid #000080; }
+
+.current-player {
+  border: 3px solid #e74c3c;
+  box-shadow: 0 0 10px #e74c3c;
+}
+
+/* 特殊布局调整 */
+.top-row .tile,
+.bottom-row .tile {
+  width: 72.7px; /* 800px / 11 */
+}
+
+.left-column .tile,
+.right-column .tile {
+  height: 88.9px; /* 800px / 9 */
+}
+
+.bottom-row {
+  flex-direction: row-reverse;
+}
+
+.left-column {
+  flex-direction: column-reverse;
+}

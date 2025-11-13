@@ -187,3 +187,144 @@
 .game-info li {
   margin-bottom: 5px;
 }
+
+.player-marker {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 16px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.player-details, .game-details {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.player-details p, .game-details p {
+  margin: 5px 0;
+}
+
+/* 添加消息提示样式 */
+.message-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.message-box {
+  background: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 更新玩家信息栏 */
+.jail-status {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* 更新控制按钮 */
+.jail-btn {
+  background: #e74c3c !important;
+}
+
+.jail-btn:hover {
+  background: #c0392b !important;
+}
+
+/* 更新玩家列表 */
+.player-item.current {
+  background: #3498db;
+  color: white;
+}
+
+.player-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  gap: 10px;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.player-name {
+  font-weight: bold;
+}
+
+.player-balance {
+  color: #27ae60;
+}
+
+.player-position {
+  color: #3498db;
+}
+
+.player-properties {
+  color: #e67e22;
+}
+
+.player-jail {
+  color: #e74c3c;
+}
+
+/* 添加新的状态指示器 */
+.turn-indicator {
+  color: #f39c12;
+  font-weight: bold;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #f39c12; }
+  to { text-shadow: 0 0 15px #f39c12, 0 0 20px #f39c12; }
+}
+
+/* 更新玩家列表状态 */
+.player-item.active-turn {
+  border-left: 4px solid #f39c12;
+}
+
+.player-turn {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+/* 禁用按钮样式 */
+.control-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.control-btn:disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,72 @@
+.quick-switcher {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quick-switcher h4 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 14px;
+}
+
+.player-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.player-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px;
+}
+
+.player-btn:hover:not(.current) {
+  border-color: #3498db;
+  background: #f8f9fa;
+}
+
+.player-btn.current {
+  border-color: #3498db;
+  background: #3498db;
+  color: white;
+  cursor: default;
+}
+
+.player-btn:disabled {
+  cursor: default;
+}
+
+.player-btn.joined {
+  border-left: 4px solid #2ecc71;
+}
+
+.player-btn.not-joined {
+  border-left: 4px solid #e74c3c;
+}
+
+.player-avatar {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.player-name {
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+}
+
+.player-status {
+  font-size: 10px;
+  opacity: 0.8;
+}

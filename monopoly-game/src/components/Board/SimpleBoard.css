@@ -1,0 +1,146 @@
+.simple-board-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+.simple-board {
+  display: grid;
+  grid-template-columns: repeat(10, 100px);
+  grid-template-rows: repeat(4, 100px);
+  grid-template-areas: 
+    "pos0 pos1 pos2 pos3 pos4 pos5 pos6 pos7 pos8 pos9"
+    "pos39 pos38 pos37 pos36 pos35 pos34 pos33 pos32 pos31 pos10"
+    "pos38 pos37 pos36 pos35 pos34 pos33 pos32 pos31 pos30 pos11"
+    "pos19 pos18 pos17 pos16 pos15 pos14 pos13 pos12 pos11 pos10";
+  gap: 2px;
+  background: #27ae60;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid #2c3e50;
+}
+
+.tile {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  min-height: 100px;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.tile-content {
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tile-name {
+  font-weight: bold;
+  font-size: 9px;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.tile-price, .tile-effect {
+  font-size: 8px;
+  color: #666;
+}
+
+.tile-owner {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 10px;
+}
+
+.tile-players {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  display: flex;
+  gap: 2px;
+}
+
+.player-marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: bold;
+  color: white;
+  border: 1px solid white;
+}
+
+.player-marker.current {
+  border: 2px solid #e74c3c;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* 格子类型样式 */
+.start-tile { background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; }
+.property-tile { background: #f8f9fa; }
+.railroad-tile { background: linear-gradient(135deg, #95a5a6, #7f8c8d); color: white; }
+.utility-tile { background: linear-gradient(135deg, #3498db, #2980b9); color: white; }
+.tax-tile { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
+.jail-tile { background: linear-gradient(135deg, #34495e, #2c3e50); color: white; }
+.free-parking-tile { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; }
+.go-to-jail-tile { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
+.chance-tile { background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; }
+.community-chest-tile { background: linear-gradient(135deg, #3498db, #2980b9); color: white; }
+
+.current-player {
+  border: 3px solid #e74c3c;
+  box-shadow: 0 0 10px #e74c3c;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .simple-board {
+    grid-template-columns: repeat(10, 90px);
+    grid-template-rows: repeat(4, 90px);
+  }
+  
+  .tile {
+    min-height: 90px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .simple-board {
+    grid-template-columns: repeat(10, 80px);
+    grid-template-rows: repeat(4, 80px);
+  }
+  
+  .tile {
+    min-height: 80px;
+    font-size: 8px;
+  }
+  
+  .tile-name {
+    font-size: 8px;
+  }
+}

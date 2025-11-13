@@ -1,11 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import Web3 from 'web3'
+import { CONTRACT_ADDRESS, MonopolyABI } from '../contracts/contractConfig'
 
 const Web3Context = createContext()
 
 export const Web3Provider = ({ children }) => {
   const [web3, setWeb3] = useState(null)
   const [account, setAccount] = useState('')
+  const [contract, setContract] = useState(null)
   const [isConnected, setIsConnected] = useState(false)
 
   const connectWallet = async () => {
@@ -19,7 +21,15 @@ export const Web3Provider = ({ children }) => {
         setAccount(accounts[0])
         setIsConnected(true)
         
+        // 初始化合约实例
+        const contractInstance = new web3Instance.eth.Contract(
+          MonopolyABI,
+          CONTRACT_ADDRESS
+        )
+        setContract(contractInstance)
+        
         console.log('钱包连接成功:', accounts[0])
+        console.log('合约实例创建成功:', CONTRACT_ADDRESS)
       } catch (error) {
         console.error('连接钱包失败:', error)
         alert('连接钱包失败，请确保已安装MetaMask并解锁')
@@ -38,6 +48,13 @@ export const Web3Provider = ({ children }) => {
             setWeb3(web3Instance)
             setAccount(accounts[0])
             setIsConnected(true)
+            
+            // 初始化合约
+            const contractInstance = new web3Instance.eth.Contract(
+              MonopolyABI,
+              CONTRACT_ADDRESS
+            )
+            setContract(contractInstance)
           }
         })
     }
@@ -47,6 +64,7 @@ export const Web3Provider = ({ children }) => {
     <Web3Context.Provider value={{
       web3,
       account,
+      contract,
       isConnected,
       connectWallet
     }}>

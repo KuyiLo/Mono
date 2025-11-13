@@ -3,3 +3,86 @@
   display: flex;
   flex-direction: column;
 }
+
+.app-header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-header h1 {
+  font-size: 1.8em;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.app-header p {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.app-layout {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 80px);
+}
+
+.sidebar {
+  width: 320px;
+  background: #34495e;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+.main-content {
+  flex: 1;
+  background: #2c3e50;
+  overflow: auto;
+}
+
+.game-instructions {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-instructions h4 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.game-instructions ul {
+  color: #7f8c8d;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+.game-instructions li {
+  margin-bottom: 6px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+  
+  .app-header h1 {
+    font-size: 1.5em;
+  }
+  
+  .app-header p {
+    font-size: 0.8em;
+  }
+}
