@@ -1,0 +1,3 @@
+运行服务器
+（1）cd Mono\monopoly-game
+（2）npm run dev
